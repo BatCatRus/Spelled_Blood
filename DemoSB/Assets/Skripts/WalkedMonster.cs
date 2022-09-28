@@ -10,7 +10,7 @@ public class WalkedMonster : Entity
 
     private void Start()
     {
-        //sprite.flipX = dir.x < 0.0f;
+        sprite.flipX = dir.x < 0.0f;
         dir = transform.right;
     }
 
@@ -21,7 +21,7 @@ public class WalkedMonster : Entity
 
     private void Move()
     {
-        //sprite.flipX = dir.x < 0.0f;
+        sprite.flipX = dir.x < 0.0f;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + transform.up * 0.1f + transform.right * dir.x * 0.7f, 0.1f);
 
