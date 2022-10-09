@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Worm : Entity
 {
-  [SerializeField] private int lives = 3;
+    private void Start()
+    {
+        lives = 3;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -12,7 +15,7 @@ public class Worm : Entity
         {
             Hero.Instance.GetDamage();
             lives--;
-            Debug.Log("у червяка " + lives);
+            Debug.Log("у Сливы " + lives);
         }
 
         if (lives < 1)

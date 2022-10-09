@@ -5,9 +5,16 @@ using UnityEngine;
 public class Hero : Entity
 {
     [SerializeField] private float speed = 3f; // скорость движения
-    [SerializeField] private int lives = 5; // скорость движения
+    //[SerializeField] private int lives = 5; // здоровье
     [SerializeField] private float jumpForce = 15f; // сила прыжка
     private bool isGrounded = false;
+
+    public bool isAttacking = false;
+    public bool isRecharged = true;
+
+    public Transform attackPos;
+    public float attackRange;
+    public LayerMask enemy;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -21,12 +28,19 @@ public class Hero : Entity
         set { anim.SetInteger("State", (int)value); }
     }
 
+    private void Start()
+    {
+        lives = 5;
+    }
+        
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         Instance = this;
+        isRecharged = true;
     }
 
     private void FixedUpdate()
@@ -42,6 +56,8 @@ public class Hero : Entity
             Run();
         if (isGrounded && Input.GetButtonDown("Jump"))
             Jump();
+        if (Input.GetButtonDown("Fire1"))
+            Attack();
     }
 
     private void Run()
@@ -56,6 +72,48 @@ public class Hero : Entity
     private void Jump()
     {
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void Attack()
+    {
+        if(isGrounded && isRecharged)
+        {
+            State = States.attack;
+            isAttacking = true;
+            isRecharged = false;
+
+
+            StartCoroutine(AttackAnimator());
+            StartCoroutine(AttackCoolDown());
+        }
+    }
+
+    private IEnumerator AttackAnimator()
+    {
+        yield return new WaitForSeconds(0.4f);
+        isAttacking = false;
+    }
+
+    private IEnumerator AttackCoolDown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isRecharged = true;
+    }
+
+    private void OnAttack()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].GetComponent<Entity>().GetDamage();
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     private void CheckGround()
@@ -77,5 +135,6 @@ public enum States
 {
     idle,
     run,
-    jump
+    jump,
+    attack
 }
