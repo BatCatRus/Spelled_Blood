@@ -50,11 +50,11 @@ public class Hero : Entity
 
     private void Update()
     {
-        if (isGrounded) State = States.idle;
+        if (isGrounded && !isAttacking) State = States.idle;
 
-        if (Input.GetButton("Horizontal"))
+        if (!isAttacking && Input.GetButton("Horizontal"))
             Run();
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (!isAttacking && isGrounded && Input.GetButtonDown("Jump"))
             Jump();
         if (Input.GetButtonDown("Fire1"))
             Attack();
@@ -90,7 +90,7 @@ public class Hero : Entity
 
     private IEnumerator AttackAnimator()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         isAttacking = false;
     }
 
