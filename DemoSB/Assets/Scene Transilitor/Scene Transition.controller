@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: sceneStart
+    m_ConditionEvent: sceneClosing
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3653428359670529431}
@@ -112,13 +112,13 @@ AnimatorController:
   m_Name: Scene Transition
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: sceneStart
+  - m_Name: sceneClosing
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: sceneEnd
+  - m_Name: sceneOpening
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -222,7 +222,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: sceneEnd
+    m_ConditionEvent: sceneOpening
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1314668491110651703}
