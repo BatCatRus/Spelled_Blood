@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource soundPlayer;
+
+    public AudioSource soundPlayer1;
+
+    public void playThisSoundEffect()
     {
-        
+        soundPlayer.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void playThisSoundEffect1()
     {
-        
+        soundPlayer1.Play();
     }
 }
