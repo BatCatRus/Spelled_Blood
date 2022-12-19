@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 621676458362048179}
   - component: {fileID: 621676458362048180}
   - component: {fileID: 621676458362048181}
+  - component: {fileID: 2607961477650788648}
   - component: {fileID: 621676458362048182}
   - component: {fileID: 621676458362048178}
   - component: {fileID: 621676458362048183}
@@ -83,6 +84,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2607961477650788648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621676458362048172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5034bc83802944c9bca57c55e08978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 4
+  m_jumpForce: 7.5
+  m_rollForce: 6
+  m_noBlood: 0
+  m_slideDust: {fileID: 0}
 --- !u!114 &621676458362048182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +114,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  lives: 5
   jumpForce: 15
+  isAttacking: 0
+  isRecharged: 1
+  attackPos: {fileID: 0}
+  attackRange: 0
+  enemy:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &621676458362048178
 SpriteRenderer:
   m_ObjectHideFlags: 0

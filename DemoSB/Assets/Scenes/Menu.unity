@@ -2469,7 +2469,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2865,7 +2865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8978913549914750053, guid: 0c405921fc2686544a8bc7351cb2929b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1078
+      value: 1144.2
       objectReference: {fileID: 0}
     - target: {fileID: 8978913549914750053, guid: 0c405921fc2686544a8bc7351cb2929b, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2901,7 +2901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8978913549914750053, guid: 0c405921fc2686544a8bc7351cb2929b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 3.68
       objectReference: {fileID: 0}
     - target: {fileID: 8978913549914750053, guid: 0c405921fc2686544a8bc7351cb2929b, type: 3}
       propertyPath: m_AnchoredPosition.y
