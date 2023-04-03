@@ -4700,8 +4700,7 @@ GameObject:
   - component: {fileID: 1949879054}
   - component: {fileID: 1949879053}
   m_Layer: 0
-  m_Name: "\u043A\u043E\u0442 \u043F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u044B\u0439
-    \u0431\u0435\u043B\u044B\u0439"
+  m_Name: batcatrus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

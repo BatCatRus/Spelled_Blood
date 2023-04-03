@@ -23,6 +23,9 @@ public class PlayerController2D : MonoBehaviour
     private float dashTimeLeft;
     private float lastImageXpos;
     private float lastDash = -100f;
+    private float knockbackStartTime;
+    [SerializeField]
+    private float knockbackDuration;
 
     private int amountOfJumpsLeft;
     private int facingDirection = 1;
@@ -44,6 +47,10 @@ public class PlayerController2D : MonoBehaviour
     private bool canClimbLedge = false;
     private bool ledgeDetected;
     private bool isDashing;
+    private bool knockback;
+
+    [SerializeField]
+    private Vector2 knockbackSpeed;
 
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
@@ -110,6 +117,7 @@ public class PlayerController2D : MonoBehaviour
         CheckJump();
         CheckLedgeClimb();
         CheckDash();
+        CheckKnockback();
     }
 
     //Метод FixedUpdate() вызывается каждый раз, когда происходит обновление физики. В нем вызываются методы ApplyMovement() и CheckSurroundings(), которые отвечают за движение персонажа и проверку окружения.
@@ -428,11 +436,11 @@ public class PlayerController2D : MonoBehaviour
     private void ApplyMovement()
     {
 
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !knockback)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove)
+        else if (canMove && !knockback)
         {
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
         }
@@ -460,7 +468,7 @@ public class PlayerController2D : MonoBehaviour
     //Функция отвечает за разворот персонажа на противоположную сторону.
     private void Flip()
     {
-        if (!isWallSliding && canFlip) //происходит проверка на два условия: не происходит ли стена скольжения (isWallSliding) и разрешен ли разворот (canFlip).
+        if (!isWallSliding && canFlip && !knockback) //происходит проверка на два условия: не происходит ли стена скольжения (isWallSliding) и разрешен ли разворот (canFlip).
         {
             facingDirection *= -1;//Если эти условия выполняются, то происходит изменение направления, в котором смотрит персонаж (facingDirection) путем умножения на -1. 
             isFacingRight = !isFacingRight; //Также меняется значение флага, который определяет, в какую сторону смотрит персонаж (isFacingRight).
@@ -478,6 +486,27 @@ public class PlayerController2D : MonoBehaviour
         Это может использоваться, например, для визуализации области, которая проверяется на наличие земли для персонажа.
         Вторая строка функции рисует линию (draw line) между двумя точками: позицией указанной в переменной wallCheck и точкой, 
         смещенной от нее на заданное расстояние по оси x (wallCheckDistance). Это может использоваться, например, для визуализации области, которая проверяется на наличие стены для персонажа.*/
+
+    public bool GetDashStatus()
+    {
+        return isDashing;
+    }
+    
+    public void Knockback(int direction)
+    {
+        knockback = true;
+        knockbackStartTime = Time.time;
+        rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+    }
+
+    private void CheckKnockback()
+    {
+        if(Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        {
+            knockback = false;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
+    }
 }
 
 

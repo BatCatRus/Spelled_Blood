@@ -47,14 +47,22 @@ public class CombatDummyController : MonoBehaviour
         CheckKnockback();
     }
 
-    private void Damage(float[] attackDetails)
+    private void Damage(float[] details)
     {
-        currentHealth -= attackDetails[0];
-        playerFacingDirection = pc.GetFacingDirection();
+        currentHealth -= details[0];
+
+        if (details[1] < aliveGO.transform.position.x)
+        {
+            playerFacingDirection = 1;
+        }
+        else
+        {
+            playerFacingDirection = -1;
+        }
 
         Instantiate(HitParticle, aliveGO.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
-        if (playerFacingDirection == 1 && attackDetails[1] > aliveGO.transform.position.x)
+        if (playerFacingDirection == 1 )
         {
             playerOnLeft = true;
         }
