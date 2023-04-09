@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Игра закрыта");
+        Debug.Log("Игра закрыта"); //Создано для проверки в консоли
         Application.Quit();
     }
 }
