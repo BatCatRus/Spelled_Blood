@@ -6,7 +6,7 @@ public class E1_MoveState : MoveState
 {
     private Enemy1 enemy;
 
-    public E1_MoveState(Entity entity, FinishStateMachine stateMachine, string animBoolName, D_MoveState stateData) : base(entity, stateMachine, animBoolName, stateData)
+    public E1_MoveState(Entity entity, FinishStateMachine stateMachine, string animBoolName, D_MoveState stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -24,6 +24,12 @@ public class E1_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(isDetectingWall || !isDetectingLedge)
+        {
+            enemy.idleState.SetFlipAfterIdle(true);
+            stateMachine.ChangeState(enemy.idleState);
+        }
     }
 
     public override void PhysicsUpdate()
