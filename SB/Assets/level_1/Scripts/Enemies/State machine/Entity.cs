@@ -44,13 +44,19 @@ public class Entity : MonoBehaviour
         rb.velocity = velocityWorkspace;
     }
 
-   /* public virtual void CheckWall()
+    public virtual bool CheckWall()
     {
         return Physics2D.Raycast(wallCheck.position, aliveGo.transform.right, entityData.wallCheckDistance, entityData.whatIsGround);
-    }*/
+    }
 
- /*   public virtual void CheckLedge()
+    public virtual bool CheckLedge()
     {
         return Physics2D.Raycast(ledgeCheck.position, Vector2.down, entityData.ledgeCheckDistance, entityData.whatIsGround);
-    }*/
+    }
+
+    public virtual void Flip()
+    {
+        facingDirection *= -1;
+        aliveGo.transform.Rotate(0f, 180f, 0f);
+    }
 }
