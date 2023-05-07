@@ -7,7 +7,7 @@ public class FinishStateMachine
 {
     public State currentState { get; private set; }
 
-    public void Initilialize(State startingState)
+    public void Initialize(State startingState)
     {
         currentState = startingState;
         currentState.Enter();
