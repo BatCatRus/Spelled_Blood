@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-02T08:06:12.064Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="OE_u1yGSQc5TTuCo76Sh" version="21.3.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-02T08:07:27.530Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="CDJhtyPgSEMaMUuLFdRF" version="21.3.7" type="github">
   <diagram name="Страница 1" id="Gj84CHODnY0U7U4xxXaJ">
-    <mxGraphModel dx="2261" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2876" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -38,10 +38,10 @@
         <mxCell id="MkpX5dZ0gaFHG59IAgGM-8" value="Если время ожидания истекло" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="360" y="360" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="MkpX5dZ0gaFHG59IAgGM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="MkpX5dZ0gaFHG59IAgGM-12" target="MkpX5dZ0gaFHG59IAgGM-15">
+        <mxCell id="MkpX5dZ0gaFHG59IAgGM-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="MkpX5dZ0gaFHG59IAgGM-12" target="MkpX5dZ0gaFHG59IAgGM-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="MkpX5dZ0gaFHG59IAgGM-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="MkpX5dZ0gaFHG59IAgGM-12" target="MkpX5dZ0gaFHG59IAgGM-19">
+        <mxCell id="MkpX5dZ0gaFHG59IAgGM-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="MkpX5dZ0gaFHG59IAgGM-12" target="MkpX5dZ0gaFHG59IAgGM-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="MkpX5dZ0gaFHG59IAgGM-12" value="Если здоровье ровно нулю" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -54,10 +54,10 @@
           <mxGeometry x="374" y="288" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="MkpX5dZ0gaFHG59IAgGM-15" value="Конец" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="680" y="250" width="100" height="60" as="geometry" />
+          <mxGeometry x="740" y="380" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="MkpX5dZ0gaFHG59IAgGM-17" value="да" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="600" y="250" width="40" height="30" as="geometry" />
+          <mxGeometry x="610" y="250" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="MkpX5dZ0gaFHG59IAgGM-18" value="нет" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="520" y="300" width="40" height="30" as="geometry" />
